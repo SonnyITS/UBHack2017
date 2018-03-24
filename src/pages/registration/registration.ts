@@ -21,41 +21,53 @@ export class RegistrationPage {
     this.navCtrl.push("ProfilePage");
   }
 
-  presentChoice(user: User) {
+  checkChoice(user: User) {
   let alert = this.alertCtrl.create({
     title: 'User Mode',
-    message: 'Are you proving rides (driver) or do you need a ride (rider)?',
+    message: 'Are you sure you want to register as ' + user.mode+ ' ?',
     buttons: [
       {
-        text: 'Driver',
+        text: 'Confirm',
         handler: () => {
-          user.mode = "driver"
-          console.log("user is a: " + user.mode);
+          if(user.mode == "Driver"){
+            console.log(user.mode);
+            this.goToDriverDetails();
+          }
+          else{
+            console.log(user.mode)
+            this.goToMapsPage();        
+          }
         }
       },
       {
-        text: 'Rider',
+        text: 'Cancel',
+        role: 'cancel',
         handler: () => {
-          user.mode = "driver"
-          console.log("user is a: " + user.mode);
+          console.log('Cancel clicked');
         }
       }
     ]
-  });
-  alert.present();
-}
+    });
+    alert.present();
+  }
 
   async register(user: User){
     try{
       const result = await this.auth.auth.createUserWithEmailAndPassword(user.email, user.password);
-      this.presentChoice(user);
-      console.log(user.mode);
-      if(result && user.mode=="driver"){
-        this.navCtrl.setRoot('DriverDetailsPage');
+      if(result){
+        this.checkChoice(user);
       }
     }
     catch(e){
       console.log(e);
     }
+  }
+
+  goToDriverDetails(){
+    this.navCtrl.push('DriverDetailsPage');
+  }
+
+  goToMapsPage(){
+    this.navCtrl.push('GoogleMapsPage');
   }
 }

@@ -24,8 +24,16 @@
     <ion-label color="primary" floating >Password</ion-label>
     <ion-input [(ngModel)]="user.password" type="password" ></ion-input>
   </ion-item>
+
+  <ion-item padding>
+      <ion-label color="primary">Rider or Driver?</ion-label>
+      <ion-select [(ngModel)]="user.mode">
+        <ion-option value="Driver">Driver</ion-option>
+        <ion-option value="Rider">Rider</ion-option>
+      </ion-select>
+    </ion-item>
   
-  <button padding round ion-button full (click)="register(user)">Continue</button>
+  <button ion-button full (click)="register(user)">Continue</button>
 
 </ion-content>
   
