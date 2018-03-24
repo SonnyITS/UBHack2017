@@ -50,7 +50,7 @@ export class RegistrationPage {
       const result = await this.auth.auth.createUserWithEmailAndPassword(user.email, user.password);
       this.presentChoice(user);
       if(result){
-        this.navCtrl.setRoot('ProfilePage');
+        this.navCtrl.setRoot('DriverDetailsPage');
       }
     }
     catch(e){
