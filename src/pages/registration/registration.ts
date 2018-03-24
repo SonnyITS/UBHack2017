@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, IonicPage } from 'ionic-angular';
 import { User } from "../../shared/user";
 
+@IonicPage()
+
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-registration',
+  templateUrl: 'registration.html'
 })
-export class HomePage {
+export class RegistrationPage {
   user = {} as User;
 
 
