@@ -19,7 +19,7 @@ export class HomePage {
     try{
       const result = await this.auth.auth.signInWithEmailAndPassword(user.email, user.password);
       if (result){
-        this.navCtrl.push("google-mapsPage");
+        this.navCtrl.push("GoogleMapsPage");
       }
       else{
         
