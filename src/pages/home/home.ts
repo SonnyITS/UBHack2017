@@ -13,6 +13,11 @@ export class HomePage {
 
   }
   profilePage(){
-    this.navCtrl.push("ProfilePage")
+    this.navCtrl.push("ProfilePage");
+  }
+
+  mapsPage(){
+    this.navCtrl.push("GoogleMapsPage");
+    
   }
 }
