@@ -49,7 +49,7 @@ export class RegistrationPage {
     try{
       const result = await this.auth.auth.createUserWithEmailAndPassword(user.email, user.password);
       this.presentChoice(user);
-      if(result){
+      if(user.mode="driver"){
         this.navCtrl.setRoot('DriverDetailsPage');
       }
     }
