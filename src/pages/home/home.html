@@ -13,14 +13,14 @@
     <ion-input [(ngModel)]="user.email"></ion-input>
   </ion-item>
   
-  <ion-item>
+  <ion-item padding>
     <ion-label color="primary" floating>Password</ion-label>
     <ion-input type="password" [(ngModel)]="user.password"></ion-input>
   </ion-item>
 
   <button ion-button color="primary" (click)="login(user)">Login</button>  
 
-  <button ion-button color="primary" (click)="goToRegister()">Not registered? Click here!</button>
+  <button ion-button color="primary" (click)="goToRegister()">Need an account? Click here!</button>
   
 </ion-content>
 
