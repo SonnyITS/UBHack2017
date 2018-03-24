@@ -14,12 +14,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'driver-details.html',
 })
 export class DriverDetailsPage {
+  passenger:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  
+  
+
+
+
+  private newMethod() {
+    console.log(this.passenger);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DriverDetailsPage');
+    //  this.display();
   }
+
+
 
 }
