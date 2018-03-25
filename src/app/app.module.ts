@@ -16,18 +16,25 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth'
 import { FIREBASE_CREDENTIALS } from "./firebase-credentials";
 
+import { Geolocation } from '@ionic-native/geolocation';
+import { GoogleMapsPage } from '../pages/google-maps/google-maps';
+import { GoogleMapsPageModule } from '../pages/google-maps/google-maps.module';
+
+
 @NgModule({
   declarations: [
     MyApp,
     // AboutPage,
     // ContactPage,
-    TabsPage
+    TabsPage,
+    ///GoogleMapsPage
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(FIREBASE_CREDENTIALS),
     AngularFireAuthModule,
     HomePageModule,
+    GoogleMapsPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -36,11 +43,13 @@ import { FIREBASE_CREDENTIALS } from "./firebase-credentials";
     // AboutPage,
     // ContactPage,
     // HomePage,
-    TabsPage
+    TabsPage,
+    GoogleMapsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
