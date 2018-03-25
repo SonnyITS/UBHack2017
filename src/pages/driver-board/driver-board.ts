@@ -29,7 +29,9 @@ export class DriverBoardPage {
       console.log('Dismissed toast');
     });
 
+    toast.present();
+
     this.navCtrl.push('GoogleMapsPage');
-  }
+  }  
 
 }
