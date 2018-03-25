@@ -98,15 +98,15 @@ export class RegistrationPage {
     }
 
   writeUserDataRider(mode, name, email) {
-    firebase.database().ref('users/rider').update({
+    firebase.database().ref('users/' + mode + '' + name).update({
       username: name,
       email: email,
-      mode: mode
+      mode: mode,
      });
   }
 
   writeUserDataDriver(mode, name, email) {
-    firebase.database().ref('users/driver').update({
+    firebase.database().ref('users/' + mode + '' + name).update({
       username: name,
       email: email,
       mode: mode
