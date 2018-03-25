@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Rider's Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label color="primary" floating>Pickup Location</ion-label>
+    <ion-input [(ngModel)]="this.rider.pickupLoc"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>Destination</ion-label>
+    <ion-input [(ngModel)]="this.rider.destinationLoc"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>Passenger Count</ion-label>
+    <ion-input type="tel" [(ngModel)]="this.rider.passCount"></ion-input>
+  </ion-item>
+
+  <button ion-button full round (click)="requestRide()">Request Ride</button>
+
+</ion-content>
