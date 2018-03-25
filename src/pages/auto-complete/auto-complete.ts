@@ -6,7 +6,8 @@ declare var google;
 
 @IonicPage()
 @Component({
-  templateUrl: 'build/pages/home/autocomplete.html'
+  selector: 'page-auto-commplete',
+  templateUrl: 'auto-complete.html'
 })
 
 export class AutocompletePage {
@@ -47,7 +48,7 @@ export class AutocompletePage {
     this.service.getPlacePredictions({
     input: this.autocomplete.query,
     componentRestrictions: {
-      country: 'de'
+      country: ''
     }
    }, (predictions, status) => {
      me.autocompleteItems = [];
@@ -68,7 +69,7 @@ export class AutocompletePage {
     geocoder.geocode({ 'address': address }, (results, status) => {
     this.latitude = results[0].geometry.location.lat();
     this.longitude = results[0].geometry.location.lng();
-    alert("lat: " + this.latitude + ", long: " + this.longitude);
+    // alert("lat: " + this.latitude + ", long: " + this.longitude);
    });
  }
 }

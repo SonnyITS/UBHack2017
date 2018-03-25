@@ -12,12 +12,12 @@
 
   <ion-item>
     <ion-label color="primary" floating>Pickup Location</ion-label>
-    <ion-input (click)="showAddressModal()" [(ngModel)]="this.rider.pickupLoc()"type="text" placeholder="Pick an address"></ion-input>
+    <ion-input (click)="showAddressModalPick()" [(ngModel)]="this.rider.pickupLoc" type="text"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary" floating>Destination</ion-label>
-    <ion-input (click)="showAddressModal()" [(ngModel)]="this.rider.destinationLoc()"type="text" placeholder="Pick an address"></ion-input>
+    <ion-input (click)="showAddressModalDest()" [(ngModel)]="this.rider.destinationLoc" type="text" ></ion-input>
   </ion-item>
 
   <ion-item>

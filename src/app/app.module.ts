@@ -12,13 +12,17 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, FirebaseApp } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth'
 import { FIREBASE_CREDENTIALS } from "./firebase-credentials";
+
+import * as firebase from 'firebase';
 
 import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMapsPage } from '../pages/google-maps/google-maps';
 import { GoogleMapsPageModule } from '../pages/google-maps/google-maps.module';
+
+import { AutoCompletePageModule } from '../pages/auto-complete/auto-complete.module';
 
 
 @NgModule({
@@ -35,6 +39,7 @@ import { GoogleMapsPageModule } from '../pages/google-maps/google-maps.module';
     AngularFireAuthModule,
     HomePageModule,
     GoogleMapsPageModule,
+    AutoCompletePageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -50,6 +55,7 @@ import { GoogleMapsPageModule } from '../pages/google-maps/google-maps.module';
     StatusBar,
     SplashScreen,
     Geolocation,
+    // FirebaseApp,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from "../../shared/user";
 import { AngularFireAuth } from 'angularfire2/auth';
-
+ 
 @IonicPage()
 @Component({
   selector: 'page-home',
@@ -12,7 +12,7 @@ export class HomePage {
   
   user = {} as User;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AngularFireAuth) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AngularFireAuth){
   }
 
   async login(user: User){
@@ -33,6 +33,8 @@ export class HomePage {
   goToRegister(){
     this.navCtrl.push('RegistrationPage');
   }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');

@@ -4,6 +4,8 @@ import { IonicPage } from 'ionic-angular/navigation/ionic-page';
 import { Geolocation } from '@ionic-native/geolocation';
 
 declare var google;
+// var service = new google.maps.places.PlacesService(this.map);
+
 
 
 @IonicPage()
@@ -18,6 +20,8 @@ export class GoogleMapsPage {
 
   lat : number;
   lon : number;
+  locName: any;
+
 
   constructor(public navCtrl: NavController, public geolocation: Geolocation) {
 
@@ -44,6 +48,11 @@ export class GoogleMapsPage {
 
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
+      this.addMarker();
+
+      // service.getDetails = google.maps.places.PlaceResult;
+      // this.locName = google.maps.places.PlaceResult.long_name;
+      
       this.lat = position.coords.latitude;
       this.lon = position.coords.longitude;
 
@@ -54,7 +63,33 @@ export class GoogleMapsPage {
 
   }
 
-  requestRide(){
+  addMarker(){
+    let marker = new google.maps.Marker({
+      map: this.map,
+      animation: google.maps.Animation.DROP,
+      position: this.map.getCenter(),
+      // title: this.locName,
+      // icon: photos[0].getUrl({'maxWidth': 35, 'maxHeight': 35})
+
+    });
+   
+    let content = 'hi' ;       
+   
+    this.addInfoWindow(marker, content);
+  }
+
+  addInfoWindow(marker, content){
+
+    let infoWindow = new google.maps.InfoWindow({
+      content: content
+    });
+   
+    google.maps.event.addListener(marker, 'click', () => {
+      infoWindow.open(this.map, marker);
+    });
+  }
+
+ requestRide(){
     this.navCtrl.push("RiderDetailsPage");
   }
 
