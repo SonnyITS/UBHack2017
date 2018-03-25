@@ -5,6 +5,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 
 declare var google;
 
+
 @IonicPage()
 @Component({
   selector: 'page-google-maps',
@@ -15,12 +16,16 @@ export class GoogleMapsPage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
 
+  lat : number;
+  lon : number;
+
   constructor(public navCtrl: NavController, public geolocation: Geolocation) {
 
   }
 
   ionViewDidLoad(){
     this.loadMap();
+    
   }
 
   loadMap(){
@@ -34,10 +39,28 @@ export class GoogleMapsPage {
         center: latLng,
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
+
       }
 
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
+      this.lat = position.coords.latitude;
+      this.lon = position.coords.longitude;
+
+      console.log(this.lat);
+      console.log(this.lon);
+
     });
+
   }
+
+  requestRide(){
+    this.navCtrl.push("RiderDetailsPage");
+  }
+
+  // getPosition(){
+  //   this.lat = position.coords.latitude;
+  //   this.lon = position.coords.longitude;
+  // }
+
   }

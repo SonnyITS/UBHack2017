@@ -8,8 +8,8 @@ export interface User {
     currentLoc: [number, number];
 
     // rider data
-    destinationLoc: [number, number];
-    pickupLoc: [number, number];
+    destinationLoc: string;
+    pickupLoc: string;
     passCount: number;
     
 }
