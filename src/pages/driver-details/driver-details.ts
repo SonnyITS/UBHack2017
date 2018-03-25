@@ -27,7 +27,7 @@ export class DriverDetailsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DriverDetailsPage');
-    //  this.display();
+    this.newMethod();
   }
 
 
