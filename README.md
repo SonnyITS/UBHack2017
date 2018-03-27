@@ -3,5 +3,5 @@ Sober Rides (name is still in development) is a hybrid mobile app that provides 
 
 The app's UI/UX is built on the Ionic Framework and the backend services such as user authentication and storing user information is handled by Firebase. 
 
-The app was started as an idea for a Hackathon hosted by the University of Bridgeport; however we intend on continuing development even after the hackathon concludes. The current progress was made over a 36 hour period thus, the currently the app is in its very early stages. 
+The app was started as an idea for a Hackathon hosted by the University of Bridgeport; however we intend on continuing development even after the hackathon concludes. The current progress was made over a 36 hour period thus, the app is in its very early stages. 
 
