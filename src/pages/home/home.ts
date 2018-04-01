@@ -23,7 +23,7 @@ export class HomePage {
         if(user.mode == "Rider"){
           this.navCtrl.push("GoogleMapsPage");
         }
-        else{
+        else if(user.mode == "Driver"){
           this.navCtrl.push('DriverBoardPage');
         }
       }

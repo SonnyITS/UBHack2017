@@ -73,7 +73,7 @@ export class GoogleMapsPage {
 
     });
    
-    let content = 'hi' ;       
+    let content = 'University of Bridgeport' ;       
    
     this.addInfoWindow(marker, content);
   }
